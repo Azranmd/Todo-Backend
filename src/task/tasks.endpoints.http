@@ -1,0 +1,28 @@
+
+### Fetch All Tasks
+GET http://localhost:3300/Task
+Content-Type : application/json
+
+
+### Create Tasks
+POST http://localhost:3300/task
+Content-Type : application/json
+
+{
+    "Title": "Dummy 5",
+    "Date": "01/15/2024",
+    "Description": "This is the Dummy 6 Description",
+    "Priority": "High",
+    "Status": "InProgress"
+}
+
+### Update Tasks
+PUT http://localhost:3300/task
+Content-Type : application/json
+{
+    "id": "cc74c61f-871c-4289-bba5-c9db40b3b75e",
+    "Title": "Dummy ",
+    "Date": "01/16/2024",
+    "Status" : "Completed"
+}
+    
