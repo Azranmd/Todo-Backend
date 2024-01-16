@@ -2,11 +2,11 @@
   "name": "todo-api2",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon index.ts",
     "build": "tsc",
-    "start": "npm dist/index.js"
+    "start": "npm index.js"
   },
   "keywords": [],
   "author": "",
