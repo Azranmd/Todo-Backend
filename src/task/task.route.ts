@@ -16,3 +16,4 @@ TaskRouter.post(
 );
 
 TaskRouter.put( '/task', UpdateValidator, taskcontroller.update,);
+TaskRouter.delete('/task',DeleteValidator, taskcontroller.delete,);
