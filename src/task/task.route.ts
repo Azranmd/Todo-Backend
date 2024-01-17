@@ -2,7 +2,7 @@ import {  Router } from 'express';
 import { taskcontroller } from './task.Controller';
 import { CreateValidator } from './task.Validator';
 import { UpdateValidator } from './task.Validator';
-
+import { DeleteValidator } from './task.Validator';
 
 export const TaskRouter: Router = Router();
 
