@@ -59,3 +59,15 @@ export const UpdateValidator = [
     ])
     .withMessage('Status Can Only be Todo, InProgress or Completed'),
 ];
+
+// Delete Validator
+export const DeleteValidator : ValidationChain[] = [
+    body('id')
+    .not()
+    .isEmpty()
+    .withMessage('The Task Id is Mandatory')
+    .trim()
+    .isString()
+    .withMessage('Id needs to be a Valid UUID Format'),
+  
+];
