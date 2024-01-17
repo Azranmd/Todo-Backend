@@ -4,6 +4,7 @@ import { AppDataSource } from '../..';
 import { instanceToPlain } from 'class-transformer';
 import { validationResult } from 'express-validator';
 import { UpdateResult } from 'typeorm';
+import { DeleteResult } from 'typeorm';
 import { plainToInstance } from 'class-transformer';
 
  class TaskController { 
