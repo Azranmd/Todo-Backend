@@ -95,6 +95,33 @@ import { plainToInstance } from 'class-transformer';
     }
   };
 
+  // Delete Tasks
+  public async delete(req:Request,res:Response):Promise<Response>{
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+      return res.status(400).json({errors:errors.array()});
+    }
+    
+    //Try to Find If the Task Exist
+    let ExistTask : TaskEntity | null;
+    try{
+      ExistTask = await AppDataSource.getRepository(TaskEntity,).findOne({where : {id : req.body.id} });
+      if(!ExistTask){
+        return res.status(404).json({error:'The Given Task with Id Does not Exist'});
+      }
+
+    // Declare the Variable for Update Task
+    const DeleteExistTask : DeleteResult = await AppDataSource.getRepository(TaskEntity,).delete(req.body.id);
+
+    // Delete The ExistTask
+    //DeleteExistTask = await AppDataSource.getRepository(TaskEntity,).delete(req.body.id);
+
+    return res.json(DeleteExistTask).status(200); 
+
+    } catch(errors) {
+      return res.json({ error : 'Internal Server Error '}).status(500);
+    }
+  };
 
 }
 
